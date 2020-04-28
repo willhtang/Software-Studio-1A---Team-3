@@ -53,6 +53,8 @@
         android:layout_width="91dp"
         android:layout_height="88dp"
         android:layout_marginTop="56dp"
+        android:layout_marginBottom="191dp"
+        app:layout_constraintBottom_toTopOf="@+id/etName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,9 +65,15 @@
         android:id="@+id/textView"
         android:layout_width="86dp"
         android:layout_height="22dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="156dp"
         android:text="Welcome!"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="157dp" />
+        app:layout_constraintBottom_toTopOf="@+id/etName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
