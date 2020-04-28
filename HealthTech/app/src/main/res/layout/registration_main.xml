@@ -14,25 +14,88 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="50dp"
+        android:layout_margin="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/text_registration"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="Registration"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    />
+                <EditText
+                    android:id="@+id/fname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Enter First Name"
+                    android:hint="First Name"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    />
+                <EditText
+                    android:id="@+id/lname"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Last Name"
+                    android:hint="Last Name"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    />
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Last Name"
+                    android:hint="Last Name"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    />
+                <EditText
+                    android:id="@+id/phoneno"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Last Name"
+                    android:hint="Last Name"
+                    />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 
 </LinearLayout>
