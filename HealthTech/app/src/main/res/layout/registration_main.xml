@@ -47,67 +47,196 @@
             android:layout_margin="10dp"
             android:gravity="center_horizontal"
             android:padding="10dp">
-
-            <TextView
+            <!--Personal Details-->
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Personal Details"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                />
-            <EditText
-                android:id="@+id/fname"
-                android:layout_width="250dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Details"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    />
+                <!--First Name-->
+                <EditText
+                    android:id="@+id/etFName"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="First Name"
+                    />
+                <!--Last Name-->
+                <EditText
+                    android:id="@+id/etLName"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="Last Name"
+                    />
+                <!--Email-->
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:inputType="textEmailAddress"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="E-mail"
+                    />
+                <!--Phone-->
+                <EditText
+                    android:id="@+id/etPhoneNo"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:inputType="phone"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="Phone Number"
+                    />
+                <!--DOB-->
+                <EditText
+                    android:id="@+id/etDOB"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:inputType="date"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="DOB"
+                    />
+                <!--Address-->
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:inputType="textPostalAddress"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="Postal Address"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorHealthTech" />
+            <!--Account Details-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_textbox"
-                android:padding="3dp"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:textColor="@color/colorInactiveText"
-                android:hint="First Name"
-                />
-
-            <EditText
-                android:id="@+id/lname"
-                android:layout_width="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Account Details"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"/>
+                <!--Username-->
+                <EditText
+                    android:id="@+id/etNewUser"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="Username"
+                    />
+                <!--Password-->
+                <EditText
+                    android:id="@+id/etNewPass"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/rounded_textbox"
+                    android:padding="3dp"
+                    android:inputType="textPassword"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorInactiveText"
+                    android:hint="Password"
+                    />
+                <!--Account Type-->
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <!--Patient Button-->
+                    <RadioButton
+                        android:id="@+id/btnPatient"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/active_button"
+                        android:text="Patient"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:padding="10dp"/>
+                    <!--Doctor Button-->
+                    <RadioButton
+                        android:id="@+id/btnDoctor"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/inactive_button"
+                        android:text="Doctor"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorHealthTech"
+                        android:textSize="18sp"
+                        android:padding="10dp"/>
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorHealthTech" />
+            <!--Next Button-->
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_textbox"
-                android:padding="3dp"
-                android:textSize="18sp"
+                android:layout_margin="20dp"
+                android:background="@drawable/inactive_button"
+                android:text="Next"
                 android:textAlignment="center"
-                android:textColor="@color/colorInactiveText"
-                android:hint="Last Name"
-                />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_textbox"
-                android:padding="3dp"
-                android:inputType="textEmailAddress"
+                android:textColor="@color/colorHealthTech"
                 android:textSize="18sp"
-                android:textAlignment="center"
-                android:textColor="@color/colorInactiveText"
-                android:hint="123@example.com"
-                />
-
-            <EditText
-                android:id="@+id/phoneno"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/rounded_textbox"
-                android:padding="3dp"
-                android:inputType="phone"
-                android:textSize="18sp"
-                android:textAlignment="center"
-                android:textColor="@color/colorInactiveText"
-                android:hint="xxxx-xxx-xxx"
-                />
+                android:padding="10dp"/>
         </LinearLayout>
     </ScrollView>
 
