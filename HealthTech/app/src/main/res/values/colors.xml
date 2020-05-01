@@ -3,4 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorHealthTech">#04CC97</color>
+    <color name="colorInactiveText">#777777</color>
 </resources>

@@ -19,21 +19,23 @@
             android:id="@+id/logo"
             android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:src="@drawable/small_logo"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginRight="10dp"
             android:text="Registration"
             android:textColor="@android:color/black"
             android:textSize="30sp"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/holo_green_light"/>
+        android:layout_height="2dp"
+        android:background="@color/colorHealthTech" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,104 +44,70 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
             android:padding="10dp">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:id="@+id/label"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="First Name"
-                    android:textColor="@android:color/black"
-                    />
-                <EditText
-                    android:id="@+id/fname"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/rounded_textbox"
-                    android:text="Enter First Name"
-                    android:hint="First Name"
-                    />
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal Details"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:id="@+id/fname"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_textbox"
+                android:padding="3dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorInactiveText"
+                android:hint="First Name"
+                />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center">
-                <TextView
-                    android:id="@+id/label"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Last Name"
-                    android:textColor="@android:color/black"
-                    />
-                <EditText
-                    android:id="@+id/lname"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Enter Last Name"
-                    android:hint="Last Name"
-                    />
-            </LinearLayout>
+            <EditText
+                android:id="@+id/lname"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_textbox"
+                android:padding="3dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorInactiveText"
+                android:hint="Last Name"
+                />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center">
-                <TextView
-                    android:id="@+id/label"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Email"
-                    android:textColor="@android:color/black"
-                    />
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:inputType="textEmailAddress"
-                    android:text="Enter Email"
-                    android:hint="123@example.com"
-                    />
-            </LinearLayout>
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_textbox"
+                android:padding="3dp"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorInactiveText"
+                android:hint="123@example.com"
+                />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center">
-                <TextView
-                    android:id="@+id/label"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Phone Number"
-                    android:textColor="@android:color/black"
-                    />
-                <EditText
-                    android:id="@+id/phoneno"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:inputType="phone"
-                    android:background="@android:color/white"
-                    android:text="Enter Phone Number"
-                    android:hint="xxxx-xxx-xxx"
-                    />
-            </LinearLayout>
+            <EditText
+                android:id="@+id/phoneno"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_textbox"
+                android:padding="3dp"
+                android:inputType="phone"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorInactiveText"
+                android:hint="xxxx-xxx-xxx"
+                />
         </LinearLayout>
     </ScrollView>
 
