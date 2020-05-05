@@ -21,16 +21,32 @@ public class Registration extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         registrationViewModel =
                 ViewModelProviders.of(this).get(RegistrationViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.registration_main, container, false);
 
         final TextView textView = root.findViewById(R.id.text_registration);
 
-        /*registrationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        registrationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });*/
+        });
         return root;
+    }
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radioPatient:
+                if (checked)
+                    toggle();
+                break;
+            case R.id.radioDoctor:
+                if (checked)
+                    toggle();
+                break;
+        }
     }
 }
