@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Personal Details"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
                 <!--First Name-->
                 <EditText
@@ -159,7 +159,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Account Details"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
                 <!--Username-->
                 <EditText
@@ -168,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/rounded_textbox"
-                    android:hint="Username"
+                    android:hint="@string/username"
                     android:padding="3dp"
                     android:textAlignment="center"
                     android:textColor="@color/colorInactiveText"
@@ -180,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/rounded_textbox"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:padding="3dp"
                     android:textAlignment="center"
@@ -188,6 +188,7 @@
                     android:textSize="18sp" />
                 <!--Account Type-->
                 <RadioGroup
+                    android:id="@+id/rgUserType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -199,11 +200,10 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/active_button"
-                        android:onClick="onRadioButtonClicked"
                         android:padding="10dp"
                         android:text="Patient"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/white"
                         android:textSize="18sp" />
                     <!--Doctor Button-->
                     <RadioButton
@@ -212,7 +212,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:background="@drawable/inactive_button"
-                        android:onClick="onRadioButtonClicked"
                         android:padding="10dp"
                         android:text="Doctor"
                         android:textAlignment="center"
@@ -227,13 +226,13 @@
                 android:background="@color/colorHealthTech" />
             <!--Next Button-->
             <Button
-                android:id="@+id/btnNext"
+                android:id="@+id/btnCreateAccount"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/inactive_button"
                 android:padding="10dp"
-                android:text="Next"
+                android:text="Create Account"
                 android:textAlignment="center"
                 android:textColor="@color/colorHealthTech"
                 android:textSize="18sp" />

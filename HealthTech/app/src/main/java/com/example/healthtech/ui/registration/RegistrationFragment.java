@@ -17,36 +17,52 @@ import com.example.healthtech.R;
 public class Registration extends Fragment {
     private RegistrationViewModel registrationViewModel;
 
+    //OnCreateView Method
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        registrationViewModel =
-                ViewModelProviders.of(this).get(RegistrationViewModel.class);
+        //Initialise View
+        registrationViewModel = ViewModelProviders.of(this).get(RegistrationViewModel.class);
         View root = inflater.inflate(R.layout.registration_main, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_registration);
+        //Declare Static Elements
+        final RadioGroup rgUserType = root.findViewById(R.id.rgUserType);
 
+        //Listeners
+        rgUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+              @Override
+              public void onCheckedChanged(RadioGroup group, int checkedId) {
+                  View radioButton = rgUserType.findViewById(checkedId);
+                  setActive(radioButton);
+                  switch (checkedId) {
+                      case R.id.radioPatient:
+                          setInactive(rgUserType.findViewById(R.id.radioDoctor));
+                          break;
+                      case R.id.radioDoctor:
+                          setInactive(rgUserType.findViewById(R.id.radioPatient));
+                          break;
+                      default:
+                          break;
+                  }
+              }
+          });
+
+        /*
         registrationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                rgUserType.setText(s);
             }
-        });
+        });*/
         return root;
     }
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.radioPatient:
-                if (checked)
-                    toggle();
-                break;
-            case R.id.radioDoctor:
-                if (checked)
-                    toggle();
-                break;
-        }
+    private void setActive(View target){
+        target.setBackgroundColor(R.drawable.active_button);
+        target.setTextColor(R.color.white)
+    }
+    private void setInActive(View target){
+        target.setBackgroundColor(R.drawable.inactive_button);
+        target.setTextColor(R.color.colorHealthTech)
     }
 }
