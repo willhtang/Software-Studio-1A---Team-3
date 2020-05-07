@@ -19,7 +19,8 @@ import com.example.healthtech.R;
 
 public class RegistrationFragment extends Fragment {
     private RegistrationViewModel registrationViewModel;
-    private EditText fname, lname, dob, email, phone, address, username, password;
+    private EditText etFName, etLName, etDOB, etEmail, etPhone, etAddress, etUsername, etPassword;
+    private RadioButton rbPatient, rbDoctor;
 
     //OnCreateView Method
     @Override
@@ -30,7 +31,19 @@ public class RegistrationFragment extends Fragment {
         View root = inflater.inflate(R.layout.registration_main, container, false);
 
         //Declare Static Elements
-        final RadioGroup rgUserType = root.findViewById(R.id.rgUserType);
+        etAddress = (EditText) root.findViewById(R.id.etAddress);
+        etDOB = (EditText) root.findViewById(R.id.etDOB);
+        etEmail = (EditText) root.findViewById(R.id.etEmail);
+        etFName = (EditText) root.findViewById(R.id.etFName);
+        etLName = (EditText) root.findViewById(R.id.etLName);
+        etPhone = (EditText) root.findViewById(R.id.etPhoneNo);
+
+        etUsername = (EditText) root.findViewById(R.id.etNewUser);
+        etPassword = (EditText) root.findViewById(R.id.etNewPass);
+
+        final RadioGroup rgUserType = (RadioGroup) root.findViewById(R.id.rgUserType);
+        rbDoctor = (RadioButton) rgUserType.findViewById(R.id.radioDoctor);
+        rbPatient = (RadioButton) rgUserType.findViewById(R.id.radioPatient);
 
         //Listeners
         rgUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -40,10 +53,10 @@ public class RegistrationFragment extends Fragment {
                   setActive(radioButton);
                   switch (checkedId) {
                       case R.id.radioPatient:
-                          setInactive((RadioButton)rgUserType.findViewById(R.id.radioDoctor));
+                          setInactive(rbDoctor);
                           break;
                       case R.id.radioDoctor:
-                          setInactive((RadioButton)rgUserType.findViewById(R.id.radioPatient));
+                          setInactive(rbPatient);
                           break;
                       default:
                           break;
