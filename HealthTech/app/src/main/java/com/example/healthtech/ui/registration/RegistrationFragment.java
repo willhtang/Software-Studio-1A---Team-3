@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.healthtech.R;
 
 public class RegistrationFragment extends Fragment {
-   /* private RegistrationViewModel registrationViewModel;
+    private RegistrationViewModel registrationViewModel;
 
     //OnCreateView Method
     @Override
@@ -53,16 +55,16 @@ public class RegistrationFragment extends Fragment {
             public void onChanged(@Nullable String s) {
                 rgUserType.setText(s);
             }
-        });
+        });*/
         return root;
     }
 
-    private void setActive(View target){
+    private void setActive(RadioButton target){
         target.setBackgroundColor(R.drawable.active_button);
         target.setTextColor(R.color.white);
     }
-    private void setInActive(View target){
+    private void setInActive(RadioButton target){
         target.setBackgroundColor(R.drawable.inactive_button);
         target.setTextColor(R.color.colorHealthTech);
-    }*/
+    }
 }
