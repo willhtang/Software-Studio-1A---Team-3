@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,7 @@ import com.example.healthtech.R;
 
 public class RegistrationFragment extends Fragment {
     private RegistrationViewModel registrationViewModel;
+    private EditText fname, lname, dob, email, phone, address, username, password;
 
     //OnCreateView Method
     @Override
@@ -38,10 +40,10 @@ public class RegistrationFragment extends Fragment {
                   setActive(radioButton);
                   switch (checkedId) {
                       case R.id.radioPatient:
-                          setInactive(rgUserType.findViewById(R.id.radioDoctor));
+                          setInactive((RadioButton)rgUserType.findViewById(R.id.radioDoctor));
                           break;
                       case R.id.radioDoctor:
-                          setInactive(rgUserType.findViewById(R.id.radioPatient));
+                          setInactive((RadioButton)rgUserType.findViewById(R.id.radioPatient));
                           break;
                       default:
                           break;
@@ -63,7 +65,7 @@ public class RegistrationFragment extends Fragment {
         target.setBackgroundColor(R.drawable.active_button);
         target.setTextColor(R.color.white);
     }
-    private void setInActive(RadioButton target){
+    private void setInactive(RadioButton target){
         target.setBackgroundColor(R.drawable.inactive_button);
         target.setTextColor(R.color.colorHealthTech);
     }
