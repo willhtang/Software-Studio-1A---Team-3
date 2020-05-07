@@ -49,8 +49,17 @@ public class RegistrationFragment extends Fragment {
         rgUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
               @Override
               public void onCheckedChanged(RadioGroup group, int checkedId) {
-                  View radioButton = rgUserType.findViewById(checkedId);
-                  setActive((RadioButton) radioButton);
+                  for(int i=0; i < rgUserType.getChildCount(); i++){
+                      RadioButton radioChild = (RadioButton) rgUserType.getChildAt(i);
+                      if(radioChild.isChecked()){
+                          setActive(radioChild);
+                      }
+                      else{
+                          setInactive(radioChild);
+                      }
+                  }
+                  /*RadioButton radioButton = (RadioButton) rgUserType.findViewById(checkedId);
+                  setActive(radioButton);
                   switch (checkedId) {
                       case R.id.radioPatient:
                           setInactive(rbDoctor);
@@ -60,7 +69,7 @@ public class RegistrationFragment extends Fragment {
                           break;
                       default:
                           break;
-                  }
+                  }*/
               }
           });
 
