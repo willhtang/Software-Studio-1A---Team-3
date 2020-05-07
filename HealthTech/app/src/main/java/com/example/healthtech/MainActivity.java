@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_home);
+        setContentView(R.layout.registration_main);
         /* BottomNavigationView navView = findViewById(R.id.nav_view);
         Passing each menu ID as a set of Ids because each
         menu should be considered as top level destinations.

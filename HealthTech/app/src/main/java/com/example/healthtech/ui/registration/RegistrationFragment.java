@@ -50,7 +50,7 @@ public class RegistrationFragment extends Fragment {
               @Override
               public void onCheckedChanged(RadioGroup group, int checkedId) {
                   View radioButton = rgUserType.findViewById(checkedId);
-                  setActive(radioButton);
+                  setActive((RadioButton) radioButton);
                   switch (checkedId) {
                       case R.id.radioPatient:
                           setInactive(rbDoctor);
@@ -76,10 +76,10 @@ public class RegistrationFragment extends Fragment {
 
     private void setActive(RadioButton target){
         target.setBackgroundColor(R.drawable.active_button);
-        target.setTextColor(R.color.white);
+        target.setTextColor(getResources().getColor(R.color.white));
     }
     private void setInactive(RadioButton target){
         target.setBackgroundColor(R.drawable.inactive_button);
-        target.setTextColor(R.color.colorHealthTech);
+        target.setTextColor(getResources().getColor(R.color.colorHealthTech));
     }
 }
