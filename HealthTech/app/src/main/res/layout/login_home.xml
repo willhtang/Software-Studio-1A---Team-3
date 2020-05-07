@@ -6,29 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
-
+    <!--Username-->
     <EditText
         android:id="@+id/etName"
         android:layout_width="280dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/rounded_textbox"
         android:ems="10"
         android:hint="username"
         android:inputType="textPersonName"
         android:text="Username"
+        android:textAlignment="center"
+        android:textColor="@color/colorInactiveText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
-
+        app:layout_constraintVertical_bias="0.532"
+        tools:text="@string/username" />
+    <!--Password-->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="280dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="22dp"
+        android:background="@drawable/rounded_textbox"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +42,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo_healthtech"
         android:layout_width="108dp"
         android:layout_height="97dp"
         android:layout_marginTop="76dp"
@@ -49,7 +55,7 @@
         app:srcCompat="@drawable/ic_home_23" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_01"
         android:layout_width="142dp"
         android:layout_height="43dp"
         android:layout_marginTop="40dp"
@@ -62,10 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_healthtech" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txt_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
@@ -75,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_01"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
@@ -91,7 +97,7 @@
         app:srcCompat="@drawable/lgn_button" />
 
     <ImageButton
-        android:id="@+id/lgn_button2"
+        android:id="@+id/sigup_button"
         android:layout_width="108dp"
         android:layout_height="35dp"
         android:background="@color/design_default_color_background"

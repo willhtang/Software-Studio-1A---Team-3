@@ -7,16 +7,20 @@
     android:layout_height="match_parent"
     android:id="@+id/doctor_1"
     >
+
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="99dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:background="@drawable/halfcircle"/>
+            android:background="@drawable/halfcircle"
+            app:popupTheme="@style/AppTheme" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -159,17 +163,19 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="115dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="86dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintEnd_toEndOf="@+id/appBarLayout" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="221dp"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

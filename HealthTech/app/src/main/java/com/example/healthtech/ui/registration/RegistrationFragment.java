@@ -14,8 +14,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
 
-public class Registration extends Fragment {
-    private RegistrationViewModel registrationViewModel;
+public class RegistrationFragment extends Fragment {
+   /* private RegistrationViewModel registrationViewModel;
 
     //OnCreateView Method
     @Override
@@ -53,16 +53,16 @@ public class Registration extends Fragment {
             public void onChanged(@Nullable String s) {
                 rgUserType.setText(s);
             }
-        });*/
+        });
         return root;
     }
 
     private void setActive(View target){
         target.setBackgroundColor(R.drawable.active_button);
-        target.setTextColor(R.color.white)
+        target.setTextColor(R.color.white);
     }
     private void setInActive(View target){
         target.setBackgroundColor(R.drawable.inactive_button);
-        target.setTextColor(R.color.colorHealthTech)
-    }
+        target.setTextColor(R.color.colorHealthTech);
+    }*/
 }
