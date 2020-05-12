@@ -33,23 +33,27 @@ public class RegistrationFragment extends Fragment {
         //Initialise View
         registrationViewModel = ViewModelProviders.of(this).get(RegistrationViewModel.class);
         View root = inflater.inflate(R.layout.registration_main, container, false);
+        return root;
+    }
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
         //Declare Static Elements
-        etAddress = (EditText) root.findViewById(R.id.etAddress);
-        etDOB = (EditText) root.findViewById(R.id.etDOB);
-        etEmail = (EditText) root.findViewById(R.id.etEmail);
-        etFName = (EditText) root.findViewById(R.id.etFName);
-        etLName = (EditText) root.findViewById(R.id.etLName);
-        etPhone = (EditText) root.findViewById(R.id.etPhoneNo);
+        etAddress = (EditText) view.findViewById(R.id.etAddress);
+        etDOB = (EditText) view.findViewById(R.id.etDOB);
+        etEmail = (EditText) view.findViewById(R.id.etEmail);
+        etFName = (EditText) view.findViewById(R.id.etFName);
+        etLName = (EditText) view.findViewById(R.id.etLName);
+        etPhone = (EditText) view.findViewById(R.id.etPhoneNo);
 
-        etUsername = (EditText) root.findViewById(R.id.etNewUser);
-        etPassword = (EditText) root.findViewById(R.id.etNewPass);
+        etUsername = (EditText) view.findViewById(R.id.etNewUser);
+        etPassword = (EditText) view.findViewById(R.id.etNewPass);
 
-        final RadioGroup rgUserType = (RadioGroup) root.findViewById(R.id.rgUserType);
+        final RadioGroup rgUserType = (RadioGroup) view.findViewById(R.id.rgUserType);
         rbDoctor = (RadioButton) rgUserType.findViewById(R.id.radioDoctor);
         rbPatient = (RadioButton) rgUserType.findViewById(R.id.radioPatient);
 
-        final Button btCreate = (Button) root.findViewById(R.id.btnCreateAccount);
+        final Button btCreate = (Button) view.findViewById(R.id.btnCreateAccount);
 
         //Listeners
         rgUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -83,7 +87,7 @@ public class RegistrationFragment extends Fragment {
             @Override
             public void onClick(View view){
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(container.getId(), new LoginFragement());
+                fragmentTransaction.replace(((ViewGroup) view.getParent()).getId(), new LoginFragement());
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
@@ -97,7 +101,6 @@ public class RegistrationFragment extends Fragment {
                 rgUserType.setText(s);
             }
         });*/
-        return root;
     }
 
     private void setActive(RadioButton target){
