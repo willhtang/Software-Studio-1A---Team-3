@@ -6,20 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.login.LoginFragement;
+import com.example.healthtech.ui.login.LoginFragment;
 
 public class RegistrationFragment extends Fragment {
     private RegistrationViewModel registrationViewModel;
@@ -27,6 +23,11 @@ public class RegistrationFragment extends Fragment {
     private RadioGroup rgUserType;
     private RadioButton rbPatient, rbDoctor;
     private Button btnCreate;
+
+    public static RegistrationFragment newRegistrationFragment(){
+        RegistrationFragment fragment = new RegistrationFragment();
+        return fragment;
+    }
 
     //OnCreateView Method
     @Override
@@ -90,7 +91,7 @@ public class RegistrationFragment extends Fragment {
             @Override
             public void onClick(View view){
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(((ViewGroup) view.getParent()).getId(), new LoginFragement());
+                fragmentTransaction.replace(((ViewGroup) view.getParent()).getId(), new LoginFragment());
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
