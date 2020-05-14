@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dash);
         lgn_btn = (ImageButton) findViewById(R.id.sigup_button);
         lgn_btn.setOnClickListener (new View.OnClickListener() {
             @Override

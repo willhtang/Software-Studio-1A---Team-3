@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.healthtech.ui.dashboard.DashboardDoctorFragment"
+        android:name="com.example.healthtech.ui.dashboard.ProfileFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/dashboard_doctor" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.healthtech.ui.notifications.NotificationsFragment"
+        android:name="com.example.healthtech.ui.chat.ChatFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
