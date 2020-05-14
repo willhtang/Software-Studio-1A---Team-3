@@ -243,6 +243,11 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorHealthTech"
                 android:textSize="18sp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"/>
         </LinearLayout>
     </ScrollView>
 
