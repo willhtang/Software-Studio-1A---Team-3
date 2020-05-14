@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.Login.LoginFragment;
+import com.example.healthtech.ui.login.LoginFragment;
 
 public class RegistrationFragment extends Fragment {
     private RegistrationViewModel registrationViewModel;
@@ -24,7 +24,7 @@ public class RegistrationFragment extends Fragment {
     private RadioButton rbPatient, rbDoctor;
     private Button btnCreate;
 
-    public static RegistrationFragment newRegistrationFragment(){
+    public static RegistrationFragment newInstance(){
         RegistrationFragment fragment = new RegistrationFragment();
         return fragment;
     }
@@ -35,7 +35,7 @@ public class RegistrationFragment extends Fragment {
                              final ViewGroup container, Bundle savedInstanceState) {
         //Initialise View
         registrationViewModel = ViewModelProviders.of(this).get(RegistrationViewModel.class);
-        View root = inflater.inflate(R.layout.registration_main, container, false);
+        View root = inflater.inflate(R.layout.fragment_registration, container, false);
 
         //Declare Static Elements
         etAddress = (EditText) root.findViewById(R.id.etAddress);
@@ -63,27 +63,27 @@ public class RegistrationFragment extends Fragment {
         rgUserType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
               @Override
               public void onCheckedChanged(RadioGroup group, int checkedId) {
-                  for(int i=0; i < rgUserType.getChildCount(); i++){
-                      RadioButton radioChild = (RadioButton) rgUserType.getChildAt(i);
-                      if(radioChild.isChecked()){
-                          setActive(radioChild);
-                      }
-                      else{
-                          setInactive(radioChild);
-                      }
+              for(int i=0; i < rgUserType.getChildCount(); i++){
+                  RadioButton radioChild = (RadioButton) rgUserType.getChildAt(i);
+                  if(radioChild.isChecked()){
+                      setActive(radioChild);
                   }
-                  /*RadioButton radioButton = (RadioButton) rgUserType.findViewById(checkedId);
-                  setActive(radioButton);
-                  switch (checkedId) {
-                      case R.id.radioPatient:
-                          setInactive(rbDoctor);
-                          break;
-                      case R.id.radioDoctor:
-                          setInactive(rbPatient);
-                          break;
-                      default:
-                          break;
-                  }*/
+                  else{
+                      setInactive(radioChild);
+                  }
+              }
+              /*RadioButton radioButton = (RadioButton) rgUserType.findViewById(checkedId);
+              setActive(radioButton);
+              switch (checkedId) {
+                  case R.id.radioPatient:
+                      setInactive(rbDoctor);
+                      break;
+                  case R.id.radioDoctor:
+                      setInactive(rbPatient);
+                      break;
+                  default:
+                      break;
+              }*/
               }
         });
 
@@ -91,20 +91,12 @@ public class RegistrationFragment extends Fragment {
             @Override
             public void onClick(View view){
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(((ViewGroup) view.getParent()).getId(), new LoginFragment());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.main_container, LoginFragment.newInstance());
+                //fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                //fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
-
-        /*
-        registrationViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                rgUserType.setText(s);
-            }
-        });*/
     }
 
     private void setActive(RadioButton target){

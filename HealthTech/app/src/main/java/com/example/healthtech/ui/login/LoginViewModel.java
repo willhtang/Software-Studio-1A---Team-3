@@ -1,4 +1,4 @@
-package com.example.healthtech.ui.Login;
+package com.example.healthtech.ui.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
