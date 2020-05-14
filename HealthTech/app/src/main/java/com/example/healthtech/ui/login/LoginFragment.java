@@ -1,6 +1,5 @@
 package com.example.healthtech.ui.login;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +12,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
+import com.example.healthtech.ui.dashboard.DashboardFragment;
 import com.example.healthtech.ui.registration.RegistrationFragment;
 
 public class LoginFragment extends Fragment {
 
     private LoginViewModel LoginViewModel;
-    private ImageButton btnSignUp;
+    private ImageButton btnLogin, btnSignUp;
 
     public static LoginFragment newInstance(){ return new LoginFragment(); }
 
@@ -28,13 +28,24 @@ public class LoginFragment extends Fragment {
                 ViewModelProviders.of(this).get(LoginViewModel.class);
         View root = inflater.inflate(R.layout.fragment_login, container, false);
 
-        btnSignUp = (ImageButton) root.findViewById(R.id.sigup_button);
+        btnLogin = (ImageButton) root.findViewById(R.id.btnLogin);
+        btnSignUp = (ImageButton) root.findViewById(R.id.btnSignUp);
 
         return root;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState){
+        btnLogin.setOnClickListener(new ImageButton.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, DashboardFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
         btnSignUp.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -11,15 +11,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
 
-public class ProfileFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
+    private DashboardViewModel dashViewModel;
+
+    public static DashboardFragment newInstance(){ return new DashboardFragment(); }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        profileViewModel =
-                ViewModelProviders.of(this).get(ProfileViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        dashViewModel =
+                ViewModelProviders.of(this).get(DashboardViewModel.class);
+        View root = inflater.inflate(R.layout.activity_dash, container, false);
         return root;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.healthtech.ui.chat;
+package com.example.healthtech.ui.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,14 +11,14 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
 
-public class ChatFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private ChatViewModel chatViewModel;
+    private ProfileViewModel profileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        chatViewModel =
-                ViewModelProviders.of(this).get(ChatViewModel.class);
+        profileViewModel =
+                ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         return root;
     }
