@@ -1,4 +1,4 @@
-package com.example.healthtech.ui.dashboard;
+package com.example.healthtech.ui.Login;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,15 +11,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
 
-public class ProfileFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
-    private ProfileViewModel profileViewModel;
+    private LoginViewModel LoginViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        profileViewModel =
-                ViewModelProviders.of(this).get(ProfileViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        LoginViewModel =
+                ViewModelProviders.of(this).get(LoginViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         return root;
     }
 }

@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.login.LoginFragment;
+import com.example.healthtech.ui.Login.LoginFragment;
 
 public class RegistrationFragment extends Fragment {
     private RegistrationViewModel registrationViewModel;
