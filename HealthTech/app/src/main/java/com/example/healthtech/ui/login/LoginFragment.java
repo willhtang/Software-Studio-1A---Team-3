@@ -13,7 +13,7 @@ import com.example.healthtech.R;
 
 public class LoginFragment extends Fragment {
     private LoginViewModel loginViewModel;
-
+    /*
     public static LoginFragment newLoginFragment() {
         LoginFragment fragment = new LoginFragment();
         return fragment;
@@ -25,7 +25,9 @@ public class LoginFragment extends Fragment {
                              final ViewGroup container, Bundle savedInstanceState) {
         //Initialise View
         loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
-        View root = inflater.inflate(R.layout.login_home, container, false);
+        View root = inflater.inflate(R.layout.activity_login, container, false);
         return root;
     }
+
+     */
 }
