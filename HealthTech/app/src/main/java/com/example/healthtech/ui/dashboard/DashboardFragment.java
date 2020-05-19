@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.healthtech.R;
 import com.example.healthtech.ui.chat.ChatFragment;
@@ -18,7 +19,7 @@ import com.example.healthtech.ui.login.LoginFragment;
 import com.example.healthtech.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class DashboardFragment extends Fragment {
+public class DashboardFragment extends NavHostFragment {
 
     private DashboardViewModel dashViewModel;
     private BottomNavigationView navBar;
@@ -34,14 +35,17 @@ public class DashboardFragment extends Fragment {
 
         navBar = (BottomNavigationView) root.findViewById(R.id.bottom_navigation);
 
+        FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, HomeFragment.newInstance()).commit();
+
         return root;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        navBar.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 switch(item.getItemId()){
                     case R.id.nav_home:
@@ -49,23 +53,21 @@ public class DashboardFragment extends Fragment {
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
-                        break;
+                        return true;
                     case R.id.nav_profile:
                         fragmentTransaction.replace(R.id.fragment_container, ProfileFragment.newInstance());
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
-                        break;
+                        return true;
                     case R.id.nav_chat:
                         fragmentTransaction.replace(R.id.fragment_container, ChatFragment.newInstance());
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
-                        break;
-                    default:
-                        fragmentTransaction.commit();
-                        break;
+                        return true;
                 }
+                return false;
             }
         });
     }
