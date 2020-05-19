@@ -10,9 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.dashboard.DashboardFragment;
-import com.example.healthtech.ui.dashboard.DashboardViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.healthtech.ui.dashboard.DashboardFragment;
 
 public class HomeFragment extends Fragment {
 
