@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Menu.MenuFragment"
+    tools:ignore="MissingDefaultResource">
+
+
+    <Button
+        android:id="@+id/search_button2"
+        android:layout_width="154dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/roundedbutton"
+        android:drawableBottom="@drawable/ic_exit_to_app_black_24dp"
+        android:text="@android:string/search_go"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Log Out" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="308dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/active_button"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="188dp"
+                android:layout_height="139dp"
+                android:src="@drawable/profile_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.313" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="189dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="7dp"
+                android:text="Dr. Sam Anthony"
+                android:textColor="#FFFEFE"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.687" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:text="Radiologist"
+                android:textColor="#201919"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.814" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="232dp"
+        android:layout_marginEnd="1dp"
+        android:background="#CCBCBC"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/search_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/design_default_color_background"
+            android:drawableStart="@drawable/ic_account_circle_black_24dp"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:fontFamily="sans-serif-medium"
+            android:text="   My Profile"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/ic_notifications_black_24dp"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:fontFamily="sans-serif-medium"
+            android:text="   Subscription"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/ic_appointment_black_24dp"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:fontFamily="sans-serif-medium"
+            android:text="   Appointments"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/ic_chat_black_24dp"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:fontFamily="sans-serif-medium"
+            android:text="   Chat Room"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="#FFFFFF"
+            android:drawableStart="@drawable/ic_settings_black_24dp"
+            android:drawableEnd="@android:drawable/ic_media_play"
+            android:fontFamily="sans-serif-medium"
+            android:text="   Settings"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

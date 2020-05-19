@@ -1,14 +1,14 @@
-package com.example.healthtech.ui.chat;
+package com.example.healthtech.ui.Menu;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ChatViewModel extends ViewModel {
+public class MenuViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ChatViewModel() {
+    public MenuViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }

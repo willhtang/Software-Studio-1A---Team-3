@@ -7,15 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.chat.ChatFragment;
+import com.example.healthtech.ui.Menu.MenuFragment;
 import com.example.healthtech.ui.home.HomeFragment;
-import com.example.healthtech.ui.login.LoginFragment;
 import com.example.healthtech.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -61,7 +59,7 @@ public class DashboardFragment extends NavHostFragment {
                         fragmentTransaction.commit();
                         return true;
                     case R.id.nav_chat:
-                        fragmentTransaction.replace(R.id.fragment_container, ChatFragment.newInstance());
+                        fragmentTransaction.replace(R.id.fragment_container, MenuFragment.newInstance());
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
