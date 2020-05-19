@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
+import com.example.healthtech.ui.registration.RegistrationFragment;
 
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
+
+    public static ProfileFragment newInstance(){ return new ProfileFragment(); }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
