@@ -1,4 +1,4 @@
-package com.example.healthtech.ui.Menu;
+package com.example.healthtech.ui.menu;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,13 +13,13 @@ import com.example.healthtech.R;
 
 public class MenuFragment extends Fragment {
 
-    private MenuViewModel chatViewModel;
+    private MenuViewModel menuViewModel;
 
     public static MenuFragment newInstance(){ return new MenuFragment(); }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        chatViewModel =
+        menuViewModel =
                 ViewModelProviders.of(this).get(MenuViewModel.class);
         View root = inflater.inflate(R.layout.fragment_menuD1, container, false);
         return root;

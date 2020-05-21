@@ -1,4 +1,4 @@
-package com.example.healthtech.ui.Menu;
+package com.example.healthtech.ui.menu;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

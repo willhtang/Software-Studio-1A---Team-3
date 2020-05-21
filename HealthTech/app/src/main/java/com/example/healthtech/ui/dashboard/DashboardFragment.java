@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.healthtech.R;
-import com.example.healthtech.ui.Menu.MenuFragment;
+import com.example.healthtech.ui.menu.MenuFragment;
 import com.example.healthtech.ui.home.HomeFragment;
 import com.example.healthtech.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
