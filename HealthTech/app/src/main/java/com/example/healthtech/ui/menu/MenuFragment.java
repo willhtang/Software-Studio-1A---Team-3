@@ -21,7 +21,7 @@ public class MenuFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         menuViewModel =
                 ViewModelProviders.of(this).get(MenuViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_menud1, container, false);
+        View root = inflater.inflate(R.layout.fragment_menu, container, false);
         return root;
     }
 }
