@@ -2,6 +2,7 @@ package com.example.healthtech.ui.registration;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
@@ -72,20 +73,9 @@ public class RegistrationFragment extends Fragment {
                       setInactive(radioChild);
                   }
               }
-              /*RadioButton radioButton = (RadioButton) rgUserType.findViewById(checkedId);
-              setActive(radioButton);
-              switch (checkedId) {
-                  case R.id.radioPatient:
-                      setInactive(rbDoctor);
-                      break;
-                  case R.id.radioDoctor:
-                      setInactive(rbPatient);
-                      break;
-                  default:
-                      break;
-              }*/
               }
         });
+
 
         btnCreate.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -100,11 +90,11 @@ public class RegistrationFragment extends Fragment {
     }
 
     private void setActive(RadioButton target){
-        target.setBackgroundColor(R.drawable.active_button);
+        target.setBackgroundResource(R.drawable.active_button);
         target.setTextColor(getResources().getColor(R.color.white));
     }
     private void setInactive(RadioButton target){
-        target.setBackgroundColor(R.drawable.inactive_button);
+        target.setBackgroundResource(R.drawable.inactive_button);
         target.setTextColor(getResources().getColor(R.color.colorHealthTech));
     }
 }
