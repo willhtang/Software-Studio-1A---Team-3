@@ -7,37 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- Header Message Box -->
     <LinearLayout
-        android:id="@+id/spacer_1"
-        android:layout_width="75dp"
-        android:layout_height="2dp"
-        android:background="@color/colorHealthTech"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_button"
-        app:layout_constraintVertical_bias="0.091" />
-
-    <LinearLayout
-        android:id="@+id/spacer_2"
-        android:layout_width="75dp"
-        android:layout_height="2dp"
-        android:background="@color/colorHealthTech"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/spacer"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_button"
-        app:layout_constraintVertical_bias="0.086" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/messagebox"
         android:layout_width="339dp"
         android:layout_height="221dp"
-        android:background="@drawable/roundedbutton"
+        android:background="@drawable/header_mbox"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -50,7 +25,7 @@
 
             <TextView
                 android:id="@+id/welcome_text"
-                android:layout_width="216dp"
+                android:layout_width="220dp"
                 android:layout_height="90dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Welcome Back, Jessica."
@@ -66,11 +41,11 @@
 
             <TextView
                 android:id="@+id/notification_text"
-                android:layout_width="259dp"
+                android:layout_width="260dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:text="You have 3 upcomming appointments."
+                android:text="You have 3 upcoming appointments."
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -81,247 +56,285 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/roundedbutton"
-        android:drawableEnd="@android:drawable/ic_menu_search"
-        android:text="@android:string/search_go"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Search" />
+    <!-- Functional Buttons -->
+    <LinearLayout
+        android:id="@+id/toolbuttons"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="10dp"
+        android:gravity="right"
+        app:layout_constraintTop_toBottomOf="@+id/messagebox">
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/active_button"
+            android:drawableEnd="@android:drawable/ic_menu_search"
+            android:text="@android:string/search_go"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="40dp"
-        android:layout_height="33dp"
+        <ImageButton
+            android:id="@+id/inbox_button"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/active_button"
+            android:src="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
 
-        android:layout_marginTop="244dp"
-        android:background="@drawable/rounded_button"
-        android:src="@android:drawable/ic_dialog_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
-        app:layout_constraintStart_toEndOf="@+id/search_button"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="243dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rounded2button"
-        android:text="Currently Available"
-        android:textColor="#00FA9A"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_button" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="410dp"
-        android:layout_height="325dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_button">
-
+    <!-- List View of Available Contacts -->
+    <LinearLayout
+        android:id="@+id/contactlistview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbuttons">
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center">
+            <LinearLayout
+                android:id="@+id/spacer_1"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorHealthTech"
+                android:orientation="vertical" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="350dp">
+            <TextView
+                android:id="@+id/button2"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded2button"
+                android:text="Currently Available"
+                android:textAlignment="center"
+                android:textColor="@color/colorHealthTech"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="105dp"
-                    android:layout_height="77dp"
-                    android:src="@drawable/profile_1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.058" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="105dp"
-                    android:layout_height="77dp"
-                    android:src="@drawable/profile_2"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.934" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="Radiologist"
-                    android:textColor="@color/colorInactiveText"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.927" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="General Dentist"
-                    android:textColor="@color/colorInactiveText"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.682"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="Dr. Henry Smith"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.682"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.851" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="105dp"
-                    android:layout_height="77dp"
-                    android:src="@drawable/profile_3"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.641" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="Dr. Mary"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.594" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="General Practitioner"
-                    android:textColor="@color/colorInactiveText"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.686" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="105dp"
-                    android:layout_height="77dp"
-                    android:src="@drawable/profile_2"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.358" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="General Dentist"
-                    android:textColor="@color/colorInactiveText"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.436" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="Dr. Henry Smith"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.344" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="General Practitioner"
-                    android:textColor="@color/colorInactiveText"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.17" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="164dp"
-                    android:layout_height="34dp"
-                    android:text="Dr. Sam Anthony"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.686"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.079" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <LinearLayout
+                android:id="@+id/spacer_2"
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="@color/colorHealthTech"
+                android:orientation="vertical" />
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_1" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sam Anthony"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Practitioner"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_2" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Henry Smith"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Dentist"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_3" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Mary"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Radiologist"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_1" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Sam Anthony"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Practitioner"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_2" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Henry Smith"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Dentist"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/profile_3" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Mary"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Radiologist"
+                        android:textColor="@color/colorInactiveText"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

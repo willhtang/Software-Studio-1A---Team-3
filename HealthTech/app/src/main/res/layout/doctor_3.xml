@@ -13,7 +13,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="472dp"
-        android:background="@drawable/halfcircle"
+        android:background="@drawable/header_mbox"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
