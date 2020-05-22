@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui.registration.RegistrationFragment">
 
@@ -55,7 +55,9 @@
             android:layout_margin="10dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:showDividers="middle"
+            android:divider="@drawable/divider_green">
             <!--Personal Details-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -148,10 +150,6 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorHealthTech" />
             <!--Account Details-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -230,10 +228,6 @@
                 </RadioGroup>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorHealthTech" />
             <!--Next Button-->
             <Button
                 android:id="@+id/btnCreateAccount"
