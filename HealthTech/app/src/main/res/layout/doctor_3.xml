@@ -46,13 +46,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.29"
-                app:srcCompat="@drawable/profile_1" />
+                app:srcCompat="@drawable/profile_3" />
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_width="186dp"
-                android:layout_height="33dp"
-                android:text="Dr. Sam Anthony"
+                android:layout_width="194dp"
+                android:layout_height="34dp"
+                android:text="Dr. Mary Elizabeth"
                 android:textAlignment="textStart"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
@@ -157,7 +157,7 @@
         android:layout_width="263dp"
         android:layout_height="27dp"
         android:fontFamily="sans-serif"
-        android:text="+61 439 667 372"
+        android:text="+61 423 123 896"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -173,7 +173,7 @@
         android:layout_height="27dp"
         android:layout_marginTop="42dp"
         android:fontFamily="sans-serif"
-        android:text="Sam.antony@healthtech.com"
+        android:text="Mary.elizabeth@healthtech.com"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

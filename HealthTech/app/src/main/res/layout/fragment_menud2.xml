@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/search_button2"
+        android:id="@+id/logOut_button2"
         android:layout_width="154dp"
         android:layout_height="42dp"
         android:layout_marginTop="25dp"
@@ -96,7 +96,7 @@
         android:layout_marginEnd="2dp"
         android:background="#CCBCBC"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/search_button2"
+        app:layout_constraintBottom_toTopOf="@+id/logOut_button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
