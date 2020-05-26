@@ -13,7 +13,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.R;
+import com.example.healthtech.ui.appointment.BookAppointmentFragment;
+import com.example.healthtech.ui.appointment.ManageAppointmentFragment;
+import com.example.healthtech.ui.chat.ChatFragment;
 import com.example.healthtech.ui.login.LoginFragment;
+import com.example.healthtech.ui.profile.ProfileFragment;
+import com.example.healthtech.ui.settings.SettingsFragment;
+import com.example.healthtech.ui.subscription.SubscriptionFragment;
 
 public class MenuFragment extends Fragment {
 
@@ -28,6 +34,11 @@ public class MenuFragment extends Fragment {
                 ViewModelProviders.of(this).get(MenuViewModel.class);
         View root = inflater.inflate(R.layout.fragment_menu, container, false);
 
+        btnAppointment = (Button) root.findViewById(R.id.btnAppointments);
+        btnChat = (Button) root.findViewById(R.id.btnChat);
+        btnProfile = (Button) root.findViewById(R.id.btnProfile);
+        btnSettings = (Button) root.findViewById(R.id.btnSettings);
+        btnSubscription = (Button) root.findViewById(R.id.btnSubscriptions);
         btnLogout = (Button) root.findViewById(R.id.btnLogout);
 
         return root;
@@ -35,6 +46,56 @@ public class MenuFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        btnAppointment.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, ManageAppointmentFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnChat.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, ChatFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnProfile.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, ProfileFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnSettings.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, SettingsFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.commit();
+            }
+        });
+
+        btnSubscription.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, SubscriptionFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.commit();
+            }
+        });
+
         btnLogout.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
