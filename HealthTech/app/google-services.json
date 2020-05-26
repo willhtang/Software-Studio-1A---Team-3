@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "893192989655",
+    "firebase_url": "https://healthtech-b502e.firebaseio.com",
+    "project_id": "healthtech-b502e",
+    "storage_bucket": "healthtech-b502e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893192989655:android:aa94cfae7cc5dfee6cf992",
+        "android_client_info": {
+          "package_name": "com.example.healthtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893192989655-1vleb5jj8mq3cirhmn58r8g9gj868lf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyrH_MauB20hiTJLB5RbySd61eR6BRT5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893192989655-1vleb5jj8mq3cirhmn58r8g9gj868lf6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
