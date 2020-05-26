@@ -33,21 +33,23 @@
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintVertical_bias="0.333"
+                app:srcCompat="@drawable/profile_4" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="189dp"
-                android:layout_height="32dp"
-                android:text="Dr. Sam Anthony"
+                android:layout_width="217dp"
+                android:layout_height="29dp"
+                android:text="Dr. Andrew Michael"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.581"
+                app:layout_constraintHorizontal_bias="0.663"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.493" />
 
             <TextView
                 android:id="@+id/textView1"
