@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_xl" />
+        <device id="pixel" />
+        <device id="Nexus 5X" />
+      </config>
+    </shared>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b70f67a-72e8-469f-82f1-1de8178ea514" name="Default Changelist" comment="" />
+    <list default="true" id="6b70f67a-72e8-469f-82f1-1de8178ea514" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Software-Studio-1A---Team-3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Software-Studio-1A---Team-3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1b7GdkFqay0rqNXCvhNZAttFiHR" />
   <component name="PropertiesComponent">
@@ -45,7 +58,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
