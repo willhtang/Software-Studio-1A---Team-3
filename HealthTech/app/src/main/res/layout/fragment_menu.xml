@@ -8,7 +8,7 @@
     tools:context=".ui.menu.MenuFragment">
 
 
-
+    <!-- Profile Header -->
     <LinearLayout
         android:id="@+id/ll_header"
         android:orientation="vertical"
@@ -46,6 +46,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Menu Items -->
     <LinearLayout
         android:id="@+id/menu_items"
         android:orientation="vertical"
@@ -58,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_header">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnProfile"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="@color/design_default_color_background"
@@ -70,7 +71,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/btnSubscriptions"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="#FFFFFF"
@@ -82,7 +83,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnAppointments"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="#FFFFFF"
@@ -94,7 +95,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnChat"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:background="#FFFFFF"
@@ -106,7 +107,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
@@ -118,7 +119,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/btnLogout"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginTop="25dp"
@@ -130,6 +131,7 @@
             android:textSize="15sp"
             android:textStyle="bold"/>
     </LinearLayout>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
