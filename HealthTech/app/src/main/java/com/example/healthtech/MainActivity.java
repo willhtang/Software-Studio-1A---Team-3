@@ -1,5 +1,6 @@
 package com.example.healthtech;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void restart(){
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
 }

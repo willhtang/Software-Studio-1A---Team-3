@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.healthtech.MainActivity;
 import com.example.healthtech.R;
 import com.example.healthtech.ui.appointment.BookAppointmentFragment;
 import com.example.healthtech.ui.appointment.ManageAppointmentFragment;
@@ -104,11 +105,7 @@ public class MenuFragment extends Fragment {
         btnLogout.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                FragmentManager mFragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, LoginFragment.newInstance());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.commit();
+                ((MainActivity)getActivity()).restart();
             }
         });
     }
