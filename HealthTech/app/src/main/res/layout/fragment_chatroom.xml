@@ -76,25 +76,19 @@
         android:layout_margin="5dp"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            android:layout_width="340dp"
+        <EditText
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_textbox"
-                android:padding="5dp"
-                android:textSize="20sp"
-                android:hint="Write Message" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:background="@drawable/rounded_textbox"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textSize="20sp"
+            android:hint="Write Message" />
 
         <Button
             android:id="@+id/sendButton"
             android:layout_width="40dp"
             android:layout_height="35dp"
-            android:layout_marginTop="1dp"
             android:background="@drawable/ic_send_24dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

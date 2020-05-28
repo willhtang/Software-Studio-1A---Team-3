@@ -62,7 +62,7 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view){
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, ChatFragment.newInstance());
+                fragmentTransaction.replace(R.id.main_container, ChatFragment.newInstance());
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
