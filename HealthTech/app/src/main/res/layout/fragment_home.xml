@@ -294,38 +294,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:paddingLeft="15dp"
-                android:gravity="center_vertical">
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="85dp"
-                    android:src="@drawable/profile_3" />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Mary"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Radiologist"
-                        android:textColor="@color/colorInactiveText"
-                        android:textSize="18sp" />
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
