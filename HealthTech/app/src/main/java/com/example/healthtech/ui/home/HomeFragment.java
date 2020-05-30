@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.Account;
 import com.example.healthtech.R;
+import com.example.healthtech.ui.doctor.Doctor1;
+import com.example.healthtech.ui.doctor.Doctor2;
+import com.example.healthtech.ui.doctor.Doctor3;
+import com.example.healthtech.ui.doctor.Doctor4;
 import com.example.healthtech.ui.inbox.InboxFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.healthtech.ui.dashboard.DashboardFragment;
@@ -26,6 +31,7 @@ public class HomeFragment extends Fragment {
     private Button btnSearch;
     private ImageButton btnInbox;
     private TextView message;
+    private LinearLayout doctor1, doctor2, doctor3, doctor4;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -36,6 +42,11 @@ public class HomeFragment extends Fragment {
 
         btnInbox = (ImageButton) root.findViewById(R.id.inbox_button);
         message = (TextView) root.findViewById(R.id.welcome_text);
+
+        doctor1 = (LinearLayout) root.findViewById(R.id.doctor_1);
+        doctor2 = (LinearLayout) root.findViewById(R.id.doctor_2);
+        doctor3 = (LinearLayout) root.findViewById(R.id.doctor_3);
+        doctor4 = (LinearLayout) root.findViewById(R.id.doctor_4);
 
         return root;
     }
@@ -49,6 +60,47 @@ public class HomeFragment extends Fragment {
             public void onClick(View view){
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, InboxFragment.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        doctor1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, Doctor1.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        doctor2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, Doctor2.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        doctor3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, Doctor3.newInstance());
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        doctor4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, Doctor4.newInstance());
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
