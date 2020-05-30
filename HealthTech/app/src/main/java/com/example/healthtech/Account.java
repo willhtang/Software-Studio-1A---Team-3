@@ -9,9 +9,11 @@ public class Account {
 
     private ArrayList<Appointment> appointments;
     private String name;
+    private boolean isDoctor;
 
     public Account(String name){
         this.name = name;
+        this.isDoctor = name.startsWith("Dr");
         this.appointments = new ArrayList<>();
         this.appointments.add(new Appointment(12, 30, 5, 30, "With Dr Sam Anthony"));
         this.appointments.add(new Appointment(19, 30, 6, 2, "With Dr Andrew Michael"));
@@ -35,6 +37,10 @@ public class Account {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isDoctor(){
+        return isDoctor;
     }
 
     public void addAppointment(Appointment appointment){

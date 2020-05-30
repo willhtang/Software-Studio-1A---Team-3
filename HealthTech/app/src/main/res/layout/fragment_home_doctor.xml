@@ -70,7 +70,7 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="40dp"
-                android:text="You have 3 upcomming appointments."
+                android:text="You have 3 upcoming appointments."
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +100,7 @@
         tools:text="Search" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/inbox_button"
         android:layout_width="40dp"
         android:layout_height="33dp"
 

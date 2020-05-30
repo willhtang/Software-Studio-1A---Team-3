@@ -36,18 +36,23 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root;
+        if(Account.active.isDoctor()){
+            root = inflater.inflate(R.layout.fragment_home_doctor, container, false);
+        }
+        else {
+            root = inflater.inflate(R.layout.fragment_home, container, false);
+            doctor1 = root.findViewById(R.id.doctor_1);
+            doctor2 = root.findViewById(R.id.doctor_2);
+            doctor3 = root.findViewById(R.id.doctor_3);
+            doctor4 = root.findViewById(R.id.doctor_4);
+        }
 
         btnSearch = root.findViewById(R.id.search_button);
 
         btnInbox = root.findViewById(R.id.inbox_button);
         messageWelcome = root.findViewById(R.id.welcome_text);
         messageUpcoming = root.findViewById(R.id.notification_text);
-
-        doctor1 = root.findViewById(R.id.doctor_1);
-        doctor2 = root.findViewById(R.id.doctor_2);
-        doctor3 = root.findViewById(R.id.doctor_3);
-        doctor4 = root.findViewById(R.id.doctor_4);
 
         return root;
     }
@@ -68,46 +73,47 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
-        doctor1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, Doctor1.newInstance());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-        doctor2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, Doctor2.newInstance());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-        doctor3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, Doctor3.newInstance());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
-        doctor4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, Doctor4.newInstance());
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
+        if(!Account.active.isDoctor()) {
+            doctor1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, Doctor1.newInstance());
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
+            doctor2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, Doctor2.newInstance());
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
+            doctor3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, Doctor3.newInstance());
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
+            doctor4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.fragment_container, Doctor4.newInstance());
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
+        }
     }
 }
