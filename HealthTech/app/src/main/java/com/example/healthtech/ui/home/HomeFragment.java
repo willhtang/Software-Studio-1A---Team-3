@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
     public static HomeFragment newInstance(){ return new HomeFragment(); }
     private Button btnSearch;
     private ImageButton btnInbox;
-    private TextView message;
+    private TextView messageWelcome, messageUpcoming;
     private LinearLayout doctor1, doctor2, doctor3, doctor4;
 
     @Override
@@ -38,23 +38,26 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        btnSearch = (Button) root.findViewById(R.id.search_button);
+        btnSearch = root.findViewById(R.id.search_button);
 
-        btnInbox = (ImageButton) root.findViewById(R.id.inbox_button);
-        message = (TextView) root.findViewById(R.id.welcome_text);
+        btnInbox = root.findViewById(R.id.inbox_button);
+        messageWelcome = root.findViewById(R.id.welcome_text);
+        messageUpcoming = root.findViewById(R.id.notification_text);
 
-        doctor1 = (LinearLayout) root.findViewById(R.id.doctor_1);
-        doctor2 = (LinearLayout) root.findViewById(R.id.doctor_2);
-        doctor3 = (LinearLayout) root.findViewById(R.id.doctor_3);
-        doctor4 = (LinearLayout) root.findViewById(R.id.doctor_4);
+        doctor1 = root.findViewById(R.id.doctor_1);
+        doctor2 = root.findViewById(R.id.doctor_2);
+        doctor3 = root.findViewById(R.id.doctor_3);
+        doctor4 = root.findViewById(R.id.doctor_4);
 
         return root;
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
-        String mess = "Welcome back, " + Account.active.getName();
-        message.setText(mess);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
+        String welcome = "Welcome back, " + Account.active.getName();
+        messageWelcome.setText(welcome);
+        String notification = "You have " + Account.active.getUpcoming() + " upcoming appointments.";
+        messageUpcoming.setText(notification);
         btnInbox.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -49,11 +49,12 @@ public class BookAppointmentFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState){
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
+        final Bundle bundle = this.getArguments();
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Appointment appointment = new Appointment(hourPick.getValue(), minutePick.getValue(), datePicker.getMonth() +1, datePicker.getDayOfMonth(), "");
+                Appointment appointment = new Appointment(hourPick.getValue(), minutePick.getValue(), datePicker.getMonth() +1, datePicker.getDayOfMonth(), "With " + bundle.getString("doctorName"));
                 boolean conflict = false;
                 for(Appointment current:Account.active.getAppointments()){
                     if(current.getStartTime().compareTo(appointment.getStartTime()) == 0){

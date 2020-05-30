@@ -32,8 +32,12 @@ public class Doctor1 extends Fragment {
         btnBookAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle result = new Bundle();
+                result.putString("doctorName","Dr Sam Anthony");
+                BookAppointmentFragment frag = new BookAppointmentFragment();
+                frag.setArguments(result);
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, BookAppointmentFragment.newInstance());
+                fragmentTransaction.replace(R.id.fragment_container, frag);
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
