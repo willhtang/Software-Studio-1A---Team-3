@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.healthtech.Account;
 import com.example.healthtech.MainActivity;
 import com.example.healthtech.R;
 import com.example.healthtech.ui.appointment.BookAppointmentFragment;
@@ -105,6 +106,7 @@ public class MenuFragment extends Fragment {
         btnLogout.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
+                Account.logout();
                 ((MainActivity)getActivity()).restart();
             }
         });
