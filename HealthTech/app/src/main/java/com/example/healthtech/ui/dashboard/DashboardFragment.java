@@ -52,12 +52,6 @@ public class DashboardFragment extends NavHostFragment {
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         return true;
-                    case R.id.nav_profile:
-                        fragmentTransaction.replace(R.id.fragment_container, ProfileFragment.newInstance());
-                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                        fragmentTransaction.addToBackStack(null);
-                        fragmentTransaction.commit();
-                        return true;
                     case R.id.nav_chat:
                         fragmentTransaction.replace(R.id.fragment_container, MenuFragment.newInstance());
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
