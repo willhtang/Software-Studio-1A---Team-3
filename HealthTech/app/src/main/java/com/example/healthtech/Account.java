@@ -47,6 +47,14 @@ public class Account {
         this.appointments.add(appointment);
     }
 
+    public void cancelAppointment(Appointment appointment){
+        this.appointments.remove(appointment);
+    }
+
+    public void cancelAppointment(int i){
+        this.appointments.remove(i);
+    }
+
     public int getUpcoming(){
         int count = 0;
         for(Appointment appointment:this.appointments){

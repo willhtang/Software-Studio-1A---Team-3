@@ -19,9 +19,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AppointmentAdapter extends BaseAdapter {
-    ArrayList<Appointment> appointments;
-    Context context;
-    LayoutInflater inflater;
+    private ArrayList<Appointment> appointments;
+    private Context context;
+    private LayoutInflater inflater;
+    private int selectedPosition = -1;
 
     public AppointmentAdapter(Context context, ArrayList<Appointment> appointments){
         this.appointments = appointments;
@@ -45,8 +46,11 @@ public class AppointmentAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup){
-        view = inflater.inflate(R.layout.appointment_listview_item, null);
+    public View getView(int i, View convertView, ViewGroup viewGroup){
+        View view = convertView;
+        if(view == null) {
+            view = inflater.inflate(R.layout.appointment_listview_item, null);
+        }
         TextView statusText = view.findViewById(R.id.appointmentStatusTextView);
         statusText.setText(Calendar.getInstance().getTime().after(appointments.get(i).getEndTime().getTime()) ? "Complete": "Upcoming");
         TextView descText = view.findViewById(R.id.appointmentDescriptionTextView);
@@ -56,5 +60,17 @@ public class AppointmentAdapter extends BaseAdapter {
         TextView dateText = view.findViewById(R.id.appointmentDateTextView);
         dateText.setText("Timing: " + startFormat.format(appointments.get(i).getStartTime().getTime()) + endFormat.format(appointments.get(i).getEndTime().getTime()));
         return view;
+    }
+
+    public void handleSelection(int position){
+        selectedPosition = selectedPosition!= position ? position:-1;
+        //view.setBackgroundResource(R.color.colorHealthTech);
+    }
+
+    public boolean selected(){return selectedPosition !=-1;}
+
+    public void deleteSelection(){
+        Account.active.cancelAppointment(selectedPosition);
+        selectedPosition = -1;
     }
 }
