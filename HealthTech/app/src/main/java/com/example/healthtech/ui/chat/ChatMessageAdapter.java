@@ -50,9 +50,11 @@ public class ChatMessageAdapter extends BaseAdapter {
         }
         TextView userText = view.findViewById(R.id.message_user);
         userText.setText(chatMessages.get(i).getMessageUser());
+
         TextView messageText = view.findViewById(R.id.message_text);
         messageText.setText(chatMessages.get(i).getMessageText());
-        SimpleDateFormat endFormat = new SimpleDateFormat("HH:mm");
+
+        SimpleDateFormat endFormat = new SimpleDateFormat("dd-MM-yyyy (HH:mm:ss)");
         TextView timeText = view.findViewById(R.id.message_time);
         timeText.setText(endFormat.format(chatMessages.get(i).getMessageTime()));
         return view;

@@ -46,7 +46,6 @@ public class ChatFragment extends ListFragment {
 
         sendButton = (Button) root.findViewById(R.id.sendButton);
         input = (EditText) root.findViewById(R.id.input);
-        messages = (ListView) root.findViewById(R.id.lv_chat);
 
         //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         return root;
