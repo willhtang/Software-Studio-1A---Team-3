@@ -9,11 +9,11 @@ public class Chatroom {
 
     private ArrayList<ChatMessage> chatMessages;
     private String name;
-    private boolean isDoctor;
 
     public Chatroom(String name){
         this.name = name;
         this.chatMessages = new ArrayList<>();
+        Chatroom.inactive.add(this);
     }
 
     public static void logout(){
@@ -32,10 +32,6 @@ public class Chatroom {
 
     public String getName() {
         return name;
-    }
-
-    public boolean isDoctor(){
-        return isDoctor;
     }
 
     public void addMessage(ChatMessage chatMessage){

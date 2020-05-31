@@ -56,40 +56,38 @@
                 app:layout_constraintVertical_bias="0.221" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
-        android:id="@+id/chat_container"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="620dp"
-        app:layout_constraintBottom_toTopOf="@id/input_bar"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
         <ListView
             android:id="@+id/lv_chat"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/input_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="5dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_textbox"
+            android:stackFromBottom="true" />
+        <LinearLayout
+            android:id="@+id/input_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_margin="5dp"
-            android:padding="5dp"
-            android:textSize="20sp"
-            android:hint="Write Message" />
+            android:gravity="center_horizontal">
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_textbox"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:hint="Write Message" />
 
-        <Button
-            android:id="@+id/sendButton"
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:background="@drawable/ic_send_24dp" />
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_send_24dp" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
