@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -46,7 +47,10 @@ public class ManageAppointmentFragment extends ListFragment {
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                setAllInactive(parent);
+                View selected = (View) parent.getChildAt(position);
                 adapter.handleSelection(position);
+                setActive(selected);
             }
         });
 
@@ -72,8 +76,21 @@ public class ManageAppointmentFragment extends ListFragment {
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
+                    setInactive((AdapterView) getListView());
                 }
             }
         });
+    }
+    private void setActive(View view){
+        view.setBackgroundResource(R.color.colorHealthTech);
+    }
+    private void setInactive(View view){
+        view.setBackgroundResource(R.color.white);
+    }
+    private void setAllInactive(AdapterView<?> parent){
+        for(int i=0; i < parent.getChildCount(); i++){
+            View child = (View) parent.getChildAt(i);
+            setInactive(child);
+        }
     }
 }

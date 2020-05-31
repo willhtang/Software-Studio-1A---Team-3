@@ -63,7 +63,7 @@ public class AppointmentAdapter extends BaseAdapter {
     }
 
     public void handleSelection(int position){
-        selectedPosition = selectedPosition!= position ? position:-1;
+        selectedPosition = (selectedPosition != position) ? position : -1;
         //view.setBackgroundResource(R.color.colorHealthTech);
     }
 
@@ -73,4 +73,7 @@ public class AppointmentAdapter extends BaseAdapter {
         Account.active.cancelAppointment(selectedPosition);
         selectedPosition = -1;
     }
+
+    public int getSelectedPosition(){ return selectedPosition; }
+
 }
