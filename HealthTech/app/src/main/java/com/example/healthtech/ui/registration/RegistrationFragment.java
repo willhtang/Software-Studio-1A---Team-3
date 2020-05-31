@@ -127,6 +127,12 @@ public class RegistrationFragment extends Fragment {
                 AlertDialog dialog;
                 Calendar flagDate = Calendar.getInstance();
                 flagDate.add(Calendar.YEAR, -18);
+                boolean passwordFlag = true;
+                for (int i =0; i<10;i++){
+                    if(etPassword.getText().toString().contains(String.valueOf(i))){
+                        passwordFlag = false;
+                    }
+                }
                 if(TextUtils.isEmpty(etFName.getText()) || TextUtils.isEmpty(etLName.getText()) || TextUtils.isEmpty(etPhone.getText()) || TextUtils.isEmpty(etEmail.getText()) || TextUtils.isEmpty(etAddress.getText()) || TextUtils.isEmpty(etUsername.getText()) || TextUtils.isEmpty(etPassword.getText()) || dob == null){
                     builder.setTitle("Incomplete Form");
                     builder.setMessage("Please fill in every field");
@@ -166,6 +172,18 @@ public class RegistrationFragment extends Fragment {
                 else if(dob.after(flagDate)){
                     builder.setTitle("Too Young");
                     builder.setMessage("You must be at least 18 years old to use this service;");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    dialog = builder.create();
+                    dialog.show();
+                }
+                else if(etPassword.getText().toString().length() < 8 || passwordFlag){
+                    builder.setTitle("Password Too Weak");
+                    builder.setMessage("Your password is too weak. Passwords should be at least 8 characters long and contain at least 1 number.");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
