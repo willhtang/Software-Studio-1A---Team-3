@@ -34,6 +34,38 @@ public class Account {
         Account.inactive.add(this);
     }
 
+    public ArrayList<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getFName() {
+        return fName;
+    }
+
+    public String getLName() {
+        return lName;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public Calendar getDOB() {
+        return DOB;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
     public static void logout(){
         if(Account.active !=null) {
             Account.inactive.add(Account.active);
@@ -60,14 +92,6 @@ public class Account {
             }
         }
         return true;
-    }
-
-    public ArrayList<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public String getUserName() {
-        return userName;
     }
 
     public boolean isDoctor(){

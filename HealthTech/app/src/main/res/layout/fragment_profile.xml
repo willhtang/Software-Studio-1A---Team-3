@@ -31,7 +31,6 @@
                 android:layout_marginTop="116dp"
                 android:layout_marginBottom="162dp"
                 android:background="@drawable/profile_icon"
-                app:layout_constraintBottom_toTopOf="@+id/etName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -54,123 +53,70 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnApplyChange"
-        android:layout_width="167dp"
-        android:layout_height="41dp"
-        android:layout_margin="20dp"
-        android:layout_marginTop="7dp"
-        android:background="@drawable/roundedbutton"
-        android:padding="10dp"
-        android:text="Apply changes"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/half_circle">
+        app:layout_constraintTop_toBottomOf="@+id/half_circle"
+        android:layout_marginTop="50dp">
 
         <!--First Name-->
 
-        <EditText
-            android:id="@+id/etFName"
+        <TextView
+            android:id="@+id/textViewName"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_textbox"
-            android:hint="First Name"
-            android:padding="3dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorInactiveText"
-            android:textSize="18sp" />
-        <!--Last Name-->
-        <EditText
-            android:id="@+id/etLName"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_textbox"
-            android:hint="Last Name"
             android:padding="3dp"
             android:textAlignment="center"
             android:textColor="@color/colorInactiveText"
             android:textSize="18sp" />
         <!--Email-->
-        <EditText
-            android:id="@+id/etEmail"
+        <TextView
+            android:id="@+id/textViewEmail"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_textbox"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress"
             android:padding="3dp"
             android:textAlignment="center"
             android:textColor="@color/colorInactiveText"
             android:textSize="18sp" />
         <!--Phone-->
-        <EditText
-            android:id="@+id/etPhoneNo"
+        <TextView
+            android:id="@+id/textViewPhoneNo"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_textbox"
-            android:hint="Phone Number"
-            android:inputType="phone"
             android:padding="3dp"
             android:textAlignment="center"
             android:textColor="@color/colorInactiveText"
             android:textSize="18sp" />
         <!--DOB-->
-        <EditText
-            android:id="@+id/etDOB"
+        <TextView
+            android:id="@+id/textViewDOB"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_textbox"
-            android:hint="DOB"
-            android:inputType="date"
             android:padding="3dp"
             android:textAlignment="center"
             android:textColor="@color/colorInactiveText"
             android:textSize="18sp" />
         <!--Address-->
-        <EditText
-            android:id="@+id/etAddress"
+        <TextView
+            android:id="@+id/textViewAddress"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/rounded_textbox"
-            android:hint="Postal Address"
-            android:inputType="textPostalAddress"
-            android:padding="3dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorInactiveText"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/etNewPass2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/rounded_textbox"
-            android:hint="@string/password"
-            android:inputType="textPassword"
             android:padding="3dp"
             android:textAlignment="center"
             android:textColor="@color/colorInactiveText"

@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
-        String welcome = "Welcome back, " + Account.active.getUserName();
+        String welcome = "Welcome back, " + Account.active.getFName();
         messageWelcome.setText(welcome);
         String notification = "You have " + Account.active.getUpcoming() + " upcoming appointments.";
         messageUpcoming.setText(notification);
