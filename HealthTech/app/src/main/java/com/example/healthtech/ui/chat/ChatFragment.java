@@ -75,7 +75,7 @@ public class ChatFragment extends ListFragment {
                                         .getCurrentUser()
                                         .getDisplayName())
                         );*/
-                ChatMessage chatMessage = new ChatMessage(input.getText().toString(), Account.active.getName());
+                ChatMessage chatMessage = new ChatMessage(input.getText().toString(), Account.active.getUserName());
                 Chatroom.active.addMessage(chatMessage);
                 /*LayoutInflater inflater = LayoutInflater.from(getActivity());
                 View newView = inflater.inflate(R.layout.message, null);

@@ -63,7 +63,7 @@ public class MenuFragment extends Fragment {
         btnChat.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
-                Chatroom.login(new Chatroom(Account.active.getName()));
+                Chatroom.login(new Chatroom(Account.active.getUserName()));
                 FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container, ChatFragment.newInstance());
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
