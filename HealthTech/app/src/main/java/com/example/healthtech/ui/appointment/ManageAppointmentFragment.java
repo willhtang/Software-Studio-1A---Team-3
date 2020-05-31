@@ -50,10 +50,7 @@ public class ManageAppointmentFragment extends ListFragment {
                 setAllInactive(parent);
                 View selected = (View) parent.getChildAt(position);
                 adapter.handleSelection(position);
-                if(position == adapter.getSelectedPosition()){
-                    setInactive(selected);
-                }
-                else{
+                if(adapter.getSelectedPosition() == position){
                     setActive(selected);
                 }
             }
