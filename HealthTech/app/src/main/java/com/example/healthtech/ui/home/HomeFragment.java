@@ -1,6 +1,5 @@
 package com.example.healthtech.ui.home;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthtech.Account;
 import com.example.healthtech.R;
@@ -22,8 +20,6 @@ import com.example.healthtech.ui.doctor.Doctor2;
 import com.example.healthtech.ui.doctor.Doctor3;
 import com.example.healthtech.ui.doctor.Doctor4;
 import com.example.healthtech.ui.inbox.InboxFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.example.healthtech.ui.dashboard.DashboardFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -59,7 +55,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
-        String welcome = "Welcome back, " + Account.active.getName();
+        String welcome = "Welcome back, " + Account.active.getUserName();
         messageWelcome.setText(welcome);
         String notification = "You have " + Account.active.getUpcoming() + " upcoming appointments.";
         messageUpcoming.setText(notification);
