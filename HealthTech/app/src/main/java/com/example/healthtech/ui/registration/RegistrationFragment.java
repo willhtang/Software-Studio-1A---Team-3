@@ -180,7 +180,6 @@ public class RegistrationFragment extends Fragment {
                     FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.main_container, LoginFragment.newInstance());
                     fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }
             }
