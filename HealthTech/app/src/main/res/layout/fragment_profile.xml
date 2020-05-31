@@ -55,7 +55,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnCreateAccount2"
+        android:id="@+id/btnApplyChange"
         android:layout_width="167dp"
         android:layout_height="41dp"
         android:layout_margin="20dp"
