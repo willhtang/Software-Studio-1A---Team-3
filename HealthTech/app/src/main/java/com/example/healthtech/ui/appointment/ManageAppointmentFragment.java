@@ -50,7 +50,12 @@ public class ManageAppointmentFragment extends ListFragment {
                 setAllInactive(parent);
                 View selected = (View) parent.getChildAt(position);
                 adapter.handleSelection(position);
-                setActive(selected);
+                if(position == adapter.getSelectedPosition()){
+                    setInactive(selected);
+                }
+                else{
+                    setActive(selected);
+                }
             }
         });
 
@@ -76,7 +81,7 @@ public class ManageAppointmentFragment extends ListFragment {
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
-                    setInactive((AdapterView) getListView());
+                    setAllInactive((AdapterView) getListView());
                 }
             }
         });
