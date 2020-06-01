@@ -19,7 +19,10 @@ public class Account {
     private Calendar DOB;
     private String address;
     private String pass;
-
+    
+    public Account(){
+        
+    }
     public Account(String userName, boolean isDoctor, String fName, String lName, String mail, String phoneNum, String address, Calendar DOB, String pass){
         this.userName = userName;
         this.isDoctor = isDoctor;
